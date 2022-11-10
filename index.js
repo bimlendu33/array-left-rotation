@@ -10,17 +10,17 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 console.log('Welcome to Programiz!');
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-var numRotations = 4;
-var rotatedArray = [];
+var numRotations = 2;
+var rotatedArray=[];
 
 function leftRotation(array, numRotations) {
   if (numRotations >= 1) {
     array = [...array.slice(1, array.length), array[0]];
     numRotations = numRotations - 1;
-    rotatedArray = [...array];
     leftRotation(array, numRotations);
+    rotatedArray.push(...array)
   }
   return rotatedArray;
 }
 
-console.log(leftRotation(array, numRotations));
+console.log('test', leftRotation(array, numRotations))
